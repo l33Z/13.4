@@ -1,10 +1,10 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from './page.module.css'
+import Image from "next/image";
+import { Inter } from "next/font/google";
+import styles from "./page.module.css";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
-export default function Home() {
+function Home() {
   return (
     <main className={styles.main}>
       <div className={styles.description}>
@@ -12,13 +12,14 @@ export default function Home() {
           Get started by editing&nbsp;
           <code className={styles.code}>app/page.js</code>
         </p>
+        <h1>demoomomo</h1>
         <div>
           <a
             href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
             target="_blank"
             rel="noopener noreferrer"
           >
-            By{' '}
+            By{" "}
             <Image
               src="/vercel.svg"
               alt="Vercel Logo"
@@ -87,5 +88,18 @@ export default function Home() {
         </a>
       </div>
     </main>
-  )
+  );
 }
+
+import { Analytics } from "@vercel/analytics/react";
+
+function MyApp({ Component, pageProps }) {
+  return (
+    <>
+      <Home {...pageProps} />
+      <Analytics />
+    </>
+  );
+}
+
+export default MyApp;
